@@ -3,6 +3,7 @@ import { View, Image } from "@tarojs/components";
 
 import Header from "../../components/header/index";
 import Footer from "../../components/footer/index";
+import "./style.scss";
 
 const dataScoure = [
   {
@@ -74,7 +75,7 @@ export default class ActivityList extends Component {
               onClick={this.goToProcuctList.bind(this, d.id)}
             >
               <Image src={d.url} mode='widthFix' style='width:100%' />
-              <View>{d.text}</View>
+              <View className='activity-title'>{d.text}</View>
             </View>
           ))}
         </View>
