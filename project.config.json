@@ -1,0 +1,17 @@
+{
+	"miniprogramRoot": "client/dist/",
+	"cloudfunctionRoot": "cloud/functions/",
+	"projectname": "app2",
+	"description": "一汽丰田零件防伪查询",
+	"appid": "wxc5fcfdc4cd1e1c5d",
+	"setting": {
+		"urlCheck": false,
+		"es6": false,
+		"postcss": false,
+		"minified": false,
+		"newFeature": false,
+		"autoAudits": false
+	},
+	"compileType": "miniprogram",
+	"condition": {}
+}

@@ -1,0 +1,14 @@
+.category{
+  &-list{
+    flex-wrap: wrap;
+    display: flex;
+    width: 100%
+  }
+  &-item{
+    display: block;
+    width: 50%;
+    &>image{
+      width: 100%
+    }
+  }
+}
