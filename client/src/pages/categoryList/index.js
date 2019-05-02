@@ -40,7 +40,7 @@ export default class CategoryList extends Component {
   componentDidHide() {}
 
   goToProcuctList = id => {
-    Taro.navigateTo({
+    Taro.redirectTo({
       url: `/pages/productList/index?id=${id}`
     });
   };

@@ -15,7 +15,9 @@ export default class Index extends Component {
 
   componentWillMount() {}
 
-  componentDidMount() {}
+  componentDidMount() {
+    console.log(wx);
+  }
 
   componentWillUnmount() {}
 
@@ -23,31 +25,35 @@ export default class Index extends Component {
 
   componentDidHide() {}
 
-  handleQRClick = e => {};
+  handleQRClick = e => {
+    Taro.scanCode({
+      success: res => {}
+    });
+  };
 
   render() {
     return (
-      <View className='root'>
+      <View className="root">
         <Header />
         <Banner />
         <View>
-          <Panel title='查询结果'>
+          <Panel title="查询结果">
             <View>请扫二维码查询</View>
-            <View className='qBtn'>
+            <View className="qBtn">
               <View onClick={this.handleQRClick}>点此扫一扫辨真伪</View>
             </View>
           </Panel>
-          <Panel title='真伪对比'>
+          <Panel title="真伪对比">
             <Video
-              src='http://v.qq.com/iframe/player.html?vid=o0501pes7iq&tiny=0&auto=0&isAutoPlay=false'
+              src="http://v.qq.com/iframe/player.html?vid=o0501pes7iq"
               controls
               autoplay={false}
-              poster='http://shp.qpic.cn/qqvideo_ori/0/o0501pes7iq_496_280/0'
-              initialTime='0'
-              id='video'
+              poster="http://shp.qpic.cn/qqvideo_ori/0/o0501pes7iq_496_280/0"
+              initialTime="0"
+              id="video"
               loop={false}
               muted={false}
-              style='width: 100%'
+              style="width: 100%"
             />
           </Panel>
         </View>

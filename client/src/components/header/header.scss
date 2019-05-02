@@ -1,18 +1,37 @@
-.root{
+.root {
   margin: 0 auto;
   text-align: center;
 }
-.brand{
-  padding-top:20px;
-  padding-bottom: 20px;
-}
-.navs{
-  display: flex;
-  background-color: #333
-}
-.nav-item{
-  flex: 1;
+.brand {
   padding-top: 20px;
   padding-bottom: 20px;
+}
+.navs {
+  display: flex;
+  background-color: #333;
+}
+.nav-item {
+  flex: 1;
   color: #fff;
+  position: relative;
+  &>text{
+    display: block;
+    font-size: 32px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+}
+.nav {
+  &-children {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    z-index: 1;
+    & > view {
+      background: #333;
+      border-top: 1PX solid #666;
+      font-size: 28px;
+      line-height: 64px
+    }
+  }
 }
