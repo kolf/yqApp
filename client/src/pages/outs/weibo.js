@@ -1,9 +1,7 @@
-import { WebView } from '@tarojs/components'
+import { WebView } from "@tarojs/components";
 
 class Weibo extends Component {
-    render () {
-      return (
-        <WebView src='https://mp.weixin.qq.com/'  />
-      )
-    }
+  render() {
+    return <WebView src='https://mp.weixin.qq.com/' />;
   }
+}

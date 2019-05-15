@@ -17,8 +17,7 @@ class App extends Component {
       "pages/service/index",
       "pages/more/index",
       "pages/categoryList/index",
-      "pages/activityList/index",
-      "pages/outs/weibo"
+      "pages/activityList/index"
     ],
     window: {
       backgroundTextStyle: "light",

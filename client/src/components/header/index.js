@@ -65,11 +65,11 @@ const navs = [
     id: 4,
     text: "了解更多",
     children: [
-      {
-        id: 41,
-        text: "官方微博",
-        router: "/pages/outs/weibo"
-      },
+      // {
+      //   id: 41,
+      //   text: "官方微博",
+      //   router: "/pages/outs/weibo"
+      // },
       {
         id: 42,
         text: "官方微信",
@@ -118,16 +118,16 @@ export default class Header extends Component {
 
   render() {
     return (
-      <View className="root">
-        <View className="brand">
-          <Image src={logoUrl} style="width: 130px" mode="widthFix" />
+      <View className='root'>
+        <View className='brand'>
+          <Image src={logoUrl} style='width: 130px' mode='widthFix' />
         </View>
-        <View className="navs">
+        <View className='navs'>
           {navs.map(n => (
-            <View className="nav-item" key={n.id + ""}>
+            <View className='nav-item' key={n.id + ""}>
               <Text onClick={this.handleClick.bind(this, n, 1)}>{n.text}</Text>
               {this.state.activeKey === n.id && n.children && (
-                <View key={n.id + ""} className="nav-children">
+                <View key={n.id + ""} className='nav-children'>
                   {n.children.map(c => (
                     <View onClick={this.handleClick.bind(this, c, 2)}>
                       {c.text}

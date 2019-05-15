@@ -13,11 +13,16 @@ export default class Index extends Component {
     navigationBarTitleText: "一汽丰田零件防伪查询"
   };
 
+  constructor() {
+    super(...arguments);
+    this.state = {
+      result: "请扫二维码查询"
+    };
+  }
+
   componentWillMount() {}
 
-  componentDidMount() {
-    console.log(wx);
-  }
+  componentDidMount() {}
 
   componentWillUnmount() {}
 
@@ -27,33 +32,45 @@ export default class Index extends Component {
 
   handleQRClick = e => {
     Taro.scanCode({
-      success: res => {}
+      success: res => {
+        Taro.request({
+          url: "http://www.cn315fw.com/toyota/index/ajaxres",
+          data: res.result
+        }).then(res => {
+          const { msg, fwc } = res.data;
+          // console.log(res);
+          this.setState({
+            result: msg
+          });
+        });
+      }
     });
   };
 
   render() {
+    const { result } = this.state;
     return (
-      <View className="root">
+      <View className='root'>
         <Header />
         <Banner />
         <View>
-          <Panel title="查询结果">
-            <View>请扫二维码查询</View>
-            <View className="qBtn">
+          <Panel title='查询结果'>
+            <View>{result}</View>
+            <View className='qBtn'>
               <View onClick={this.handleQRClick}>点此扫一扫辨真伪</View>
             </View>
           </Panel>
-          <Panel title="真伪对比">
+          <Panel title='真伪对比'>
             <Video
-              src="http://v.qq.com/iframe/player.html?vid=o0501pes7iq"
+              src='http://imgcache.qq.com/tencentvideo_v1/player/TPout.swf?max_age=86400&v=20140714'
               controls
               autoplay={false}
-              poster="http://shp.qpic.cn/qqvideo_ori/0/o0501pes7iq_496_280/0"
-              initialTime="0"
-              id="video"
+              poster='http://shp.qpic.cn/qqvideo_ori/0/o0501pes7iq_496_280/0'
+              initialTime='0'
+              id='video'
               loop={false}
               muted={false}
-              style="width: 100%"
+              style='width: 100%'
             />
           </Panel>
         </View>
